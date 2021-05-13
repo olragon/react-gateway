@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import GatewayRegistry from "./GatewayRegistry";
+import React from 'react';
+import PropTypes from 'prop-types';
+import GatewayRegistry from './GatewayRegistry';
 
 export default class Gateway extends React.Component {
   static contextTypes = {

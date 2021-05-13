@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import GatewayRegistry from "./GatewayRegistry";
-import { deprecated } from "react-prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import GatewayRegistry from './GatewayRegistry';
+import { deprecated } from 'react-prop-types';
 
 export default class GatewayDest extends React.Component {
   static contextTypes = {
@@ -35,7 +35,7 @@ export default class GatewayDest extends React.Component {
     const {component, tagName, ...attrs} = this.props;
     delete attrs.name;
     return React.createElement(
-      component || tagName || "div",
+      component || tagName || 'div',
       attrs,
       this.state.children
     );
