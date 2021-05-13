@@ -10,7 +10,7 @@
     "lint": "eslint src/ test/",
     "prepublish": "npm run build",
     "test": "karma start",
-    "test-ci": "karma start --browsers jsdom"
+    "test-ci": "NODE_ENV=CI karma start --browsers jsdom"
   },
   "keywords": [
     "react",

@@ -59,6 +59,8 @@ module.exports = function (config) {
   config.set({
     frameworks: ["browserify", "mocha"],
 
+    singleRun: args.env !== "CI",
+
     files: [
       {
         pattern:
