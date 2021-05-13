@@ -1,15 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import GatewayRegistry from './GatewayRegistry';
+import React from "react";
+import PropTypes from "prop-types";
+import GatewayRegistry from "./GatewayRegistry";
 
 export default class Gateway extends React.Component {
   static contextTypes = {
-    gatewayRegistry: PropTypes.instanceOf(GatewayRegistry).isRequired
+    gatewayRegistry: PropTypes.instanceOf(GatewayRegistry).isRequired,
   };
 
   static propTypes = {
     into: PropTypes.string.isRequired,
-    children: PropTypes.node
+    children: PropTypes.node,
   };
 
   constructor(props, context) {
@@ -17,7 +17,7 @@ export default class Gateway extends React.Component {
     this.gatewayRegistry = context.gatewayRegistry;
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.id = this.gatewayRegistry.register(
       this.props.into,
       this.props.children
@@ -25,7 +25,7 @@ export default class Gateway extends React.Component {
     this.renderIntoGatewayNode(this.props);
   }
 
-  componentWillReceiveProps(props) {
+  UNSAFE_componentWillReceiveProps(props) {
     this.gatewayRegistry.clearChild(this.props.into, this.id);
     this.renderIntoGatewayNode(props);
   }
